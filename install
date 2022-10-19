@@ -14,4 +14,5 @@ sudo service puppetserver status
 sudo /opt/puppetlabs/bin/puppet resource service puppetserver ensure=running enable=true
 sudo /opt/puppetlabs/bin/puppet resource service puppet ensure=running enable=true
 
+sudo /opt/puppetlabs/bin/puppetserver ca list
 
