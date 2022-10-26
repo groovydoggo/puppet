@@ -1,0 +1,32 @@
+package { 'tree':
+ ensure => installed
+}
+package { 'ncdu':
+ ensure => installed
+}
+
+node 'puppetagent.localdomain' {
+ user { 'engin':
+  name => 'engineer',
+  home => '/home/engineer',
+  managehome => true,
+  shell => '/bin/bash',
+  ensure => present,
+  password => '12345',
+  groups => sudo,
+ }
+}
+
+
+
+class software {
+ 
+$removepackeges = [ "sendmail", "exim" ]
+$installpackeges = [ "nmap", "iptraf", "postfix", "mc", "nano", "sudo" ]
+ 
+ 
+        package {$removepackeges : ensure => purged, }
+        package { $installpackeges :   ensure => "installed", }
+}
+
+
