@@ -19,4 +19,8 @@ sudo /opt/puppetlabs/bin/puppetserver ca list --all
 fileserver
 /etc/puppetlabs/puppet/fileserver.conf
 
+[files]
+path /etc/puppetlabs/code/files
+allow *
+
 
