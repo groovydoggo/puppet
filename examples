@@ -15,6 +15,14 @@ node 'puppetagent.localdomain' {
   password => '12345',
   groups => sudo,
  }
+ file { 'bashrc':
+  ensure => file,
+  path => '/home/engineer/.bashrc',
+  source => 'puppet:///files/test/.bashrc',
+  owner => 'engineer',
+  group => 'engineer',
+  mode => '0644',
+ }
 }
 
 
